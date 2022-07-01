@@ -1,10 +1,5 @@
 /*
-Ability to create a Stack of 56->30->70
-- Use LinkedList to do the Stack Operations
-- Here push will internally call add method
-on LinkedList.
-- So 70 will be added first then 30 and
-then 56 to make 56 on top of the Stack
+Ability to peak and pop from the Stack till it is empty 56 ->30 ->70
  */
 package com.bridgelabz;
 import java.util.Scanner;
@@ -17,16 +12,23 @@ public class StacksAndQueues {
         Scanner sc = new Scanner(System.in);
         Operation operation = new Operation();
         do {
-            System.out.println("Enter the options:\n1. To push the data\n2. Display the Stack\n3. To exit");
+            System.out.println("Enter the options:\n1. To push the data\n2. Pop the data" +
+                    "\n3. Peek the element\n4. To display\n5. To exit");
             choose = sc.nextInt();
             switch (choose) {
                 case 1:
                     operation.push(sc); //calling method to push the data
                     break;
                 case 2:
-                    operation.display();
+                    operation.pop(); //pop the top element
                     break;
                 case 3:
+                    operation.peek(); //peek the top element
+                    break;
+                case 4:
+                    operation.display(); //display the stack
+                    break;
+                case 5:
                     break;
                 default:
                     System.out.println("Enter invalid input");

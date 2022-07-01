@@ -16,6 +16,25 @@ public class Operation {
             top = newNode;
         }
     }
+    //pop method
+    void pop(){
+        if (top == null){
+            System.out.println("Stack is empty");
+        }else {
+            top = top.next;
+        }
+    }
+    //peek method
+    public void peek()
+    {
+        if (top != null) {
+            System.out.println(top.data);
+        }
+        else {
+            System.out.println("Stack is empty");
+        }
+    }
+    //display method
     void display() {
         MyStack.Node temp = top;
         while (temp != null) {
