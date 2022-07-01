@@ -1,45 +1,21 @@
 package com.bridgelabz;
 
-import java.util.Scanner;
-
 public class Operation {
-    MyStack.Node top = null;
-// push method
-    void push(Scanner sc) {
-        System.out.print("Enter data: ");
-        int data = sc.nextInt();
-        MyStack.Node newNode = new MyStack.Node(data);
-        if (top == null) {
-            top = newNode;
-        } else {
-            newNode.next = top;
-            top = newNode;
-        }
+    MyQueue front, rear;
+
+    public Operation() {
+        this.front = this.rear = null;
     }
-    //pop method
-    void pop(){
-        if (top == null){
-            System.out.println("Stack is empty");
-        }else {
-            top = top.next;
+    // Method to add a key to the queue.
+    void enqueue(int data) {
+        // Create a new LinkedList node
+        MyQueue temp = new MyQueue(data);//object
+        // If queue is empty, then new node is front and rear both
+        if (this.rear == null) {
+            this.front = this.rear = temp;
         }
-    }
-    //peek method
-    public void peek()
-    {
-        if (top != null) {
-            System.out.println(top.data);
-        }
-        else {
-            System.out.println("Stack is empty");
-        }
-    }
-    //display method
-    void display() {
-        MyStack.Node temp = top;
-        while (temp != null) {
-            System.out.println(temp.data);
-            temp = temp.next;
-        }
+        // Add the new node at the end of queue and change rear
+        this.rear.next = temp;
+        this.rear = temp;
     }
 }
