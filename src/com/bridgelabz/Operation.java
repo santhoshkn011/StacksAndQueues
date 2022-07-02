@@ -7,7 +7,7 @@ public class Operation {
         this.front = this.rear = null;
     }
     // Method to add a key to the queue.
-    void enqueue(int data) {
+    void enterQueue(int data) {
         // Create a new LinkedList node
         MyQueue temp = new MyQueue(data);//object
         // If queue is empty, then new node is front and rear both
